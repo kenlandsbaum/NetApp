@@ -1,0 +1,38 @@
+@using BlazorWeb.Models;
+
+@namespace BlazorWeb.Components.Todos
+
+@rendermode InteractiveServer
+
+@if (@todo == null) 
+{
+    <p>No todo</p>
+}
+else
+{
+    <li style="list-style-type: none;border-top: 1px solid #ccc;">
+        <p style="margin-top: 0.6em;"><b><i>@todo.Title</i></b></p>
+        <p>Completed: @todo.IsComplete</p>
+        <button class="btn btn-primary" @onclick="() => InvokeToggleComplete(todo)">Toggle Complete</button>
+        <button class="btn btn-secondary" @onclick="() => InvokleDeleteTodo(todo)">Delete</button>
+    </li>
+}
+
+@code {
+    [Parameter]
+    public TodoItem todo { get; set; } = null!;
+
+    [Parameter] 
+    public Func<TodoItem, Task> ToggleComplete { get; set; } = null!;
+    private async Task InvokeToggleComplete(TodoItem todo)
+    {
+        await ToggleComplete(todo);
+    }
+    [Parameter]
+    public Func<TodoItem, Task> DeleteTodo { get; set; } = null!;
+    private async Task InvokleDeleteTodo(TodoItem todo)
+    {
+        await DeleteTodo(todo);
+    }
+}
+

@@ -1,0 +1,36 @@
+@using BlazorWeb.Models;
+
+@namespace BlazorWeb.Components.Todos
+
+@rendermode InteractiveServer
+
+<h1 style="font-weight:300;">Add A Todo</h1>
+<form @onsubmit="InvokeAddTodo">
+    <InputText @bind-Value="@newTodoName" placeholder="Title" />
+    <button class="btn btn-primary" type="submit">Add Todo</button>
+</form>
+@if (validationError != "") {
+    <span style="color:#f00;display:inline-block;">@validationError</span>
+}
+
+@code {
+    private String validationError = "";
+    private String newTodoName = "";
+
+    [Parameter]
+    public Func<String, Task> AddTodo { get; set; } = null!;
+
+    private async Task InvokeAddTodo() 
+    {
+        if (!String.IsNullOrEmpty(newTodoName)) {
+            await AddTodo(newTodoName);
+            newTodoName = "";
+            validationError = "";
+            return;
+        }
+        validationError = "todo must not be empty";
+        return;
+    }
+}    
+
+

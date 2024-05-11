@@ -1,0 +1,24 @@
+
+@namespace BlazorWeb.Components.Todos
+
+@rendermode InteractiveServer
+
+<div>
+    <h3 style="display:block;margin: 0.6em 0px;font-weight:300;">Visibility Filter</h3>
+    <button class="btn btn-info" @onclick="InvokeToggleVisibility">
+        Show @filterText
+    </button>
+</div>
+
+@code {
+    [Parameter]
+    public string filterText { get; set; } = null!;
+
+    [Parameter]
+    public EventCallback ToggleVisibility { get; set; }
+
+    private async Task InvokeToggleVisibility()
+    {
+        await ToggleVisibility.InvokeAsync();
+    }
+}
