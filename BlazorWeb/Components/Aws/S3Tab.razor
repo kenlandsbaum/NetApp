@@ -1,0 +1,42 @@
+@using Amazon.S3.Model
+
+@namespace BlazorWeb.Components.Aws
+
+@rendermode InteractiveServer
+
+<div>
+    <div style="border:1px solid #333;padding: 1em;">
+        <h3 style="font-weight:300;margin:0.6em 0;">S3 Buckets</h3>
+        <button class="btn btn-info" style="margin:0.6em 0;" @onclick="InvokeFetch">Fetch</button>
+
+        @if (buckets is not null)
+        {
+            @foreach (var bucket in buckets)
+            {
+                <li style="list-style-type:none;padding:0.6em 0;border-bottom:1px solid #ddd;">
+                    <p>@bucket.BucketName</p>
+                    <p>@bucket.CreationDate</p>
+                </li>
+            }
+        }
+    </div>
+    <div>
+        <h3 style="font-weight:300;margin:0.6em 0;">Create Bucket</h3>
+        <InputText @bind-Value="newBucketName" placeholder="Enter bucket name" style="margin:0.6em 0;" />
+        <button class="btn btn-primary" style="margin:0.6em 0;" >Create</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<S3Bucket> buckets {get; set;} = null!;
+
+    [Parameter]
+    public EventCallback FetchBuckets {get; set;}
+    private string newBucketName {get; set;} = string.Empty;
+
+    private async Task InvokeFetch()
+    {
+        await FetchBuckets.InvokeAsync();
+    }
+}

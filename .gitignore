@@ -2,3 +2,5 @@ BlazorWeb.Testing/bin/Debug/net8.0
 BlazorWeb.Testing/obj/Debug/net8.0
 BlazorWeb/bin/Debug/net8.0
 BlazorWeb/obj/Debug/net8.0
+
+.fake
