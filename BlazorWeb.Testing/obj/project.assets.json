@@ -51,6 +51,22 @@
           }
         }
       },
+      "AWSSDK.CloudFormation/3.7.307.15": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.303.29, 4.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.CloudFormation.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.CloudFormation.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "AWSSDK.Core/3.7.303.29": {
         "type": "package",
         "compile": {
@@ -60,6 +76,22 @@
         },
         "runtime": {
           "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Lambda/3.7.305.21": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.303.29, 4.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.Lambda.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Lambda.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -3376,6 +3408,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AWSSDK.CloudFormation": "3.7.307.15",
+          "AWSSDK.Lambda": "3.7.305.21",
           "AWSSDK.S3": "3.7.307.31",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.4",
@@ -3461,6 +3495,38 @@
         "logo.png"
       ]
     },
+    "AWSSDK.CloudFormation/3.7.307.15": {
+      "sha512": "5vrMTFxfpXitxVNEdZVFmRvniF+c/JIXCmMzWGhhw/rNB7r2Or/CkcpEs4rEBUdurAV8ro78QanqhpTuU5OrIQ==",
+      "type": "package",
+      "path": "awssdk.cloudformation/3.7.307.15",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.CloudFormation.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.cloudformation.3.7.307.15.nupkg.sha512",
+        "awssdk.cloudformation.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.CloudFormation.dll",
+        "lib/net35/AWSSDK.CloudFormation.pdb",
+        "lib/net35/AWSSDK.CloudFormation.xml",
+        "lib/net45/AWSSDK.CloudFormation.dll",
+        "lib/net45/AWSSDK.CloudFormation.pdb",
+        "lib/net45/AWSSDK.CloudFormation.xml",
+        "lib/net8.0/AWSSDK.CloudFormation.dll",
+        "lib/net8.0/AWSSDK.CloudFormation.pdb",
+        "lib/net8.0/AWSSDK.CloudFormation.xml",
+        "lib/netcoreapp3.1/AWSSDK.CloudFormation.dll",
+        "lib/netcoreapp3.1/AWSSDK.CloudFormation.pdb",
+        "lib/netcoreapp3.1/AWSSDK.CloudFormation.xml",
+        "lib/netstandard2.0/AWSSDK.CloudFormation.dll",
+        "lib/netstandard2.0/AWSSDK.CloudFormation.pdb",
+        "lib/netstandard2.0/AWSSDK.CloudFormation.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "AWSSDK.Core/3.7.303.29": {
       "sha512": "YjSPjAxJBorMNmYfuDfCbnrqjwLubQUaSyZi5v5iLv7B1u5wZY24SYdccbYNS8r+errGhqYESvlI/6MoFlE3gA==",
       "type": "package",
@@ -3488,6 +3554,38 @@
         "lib/netstandard2.0/AWSSDK.Core.pdb",
         "lib/netstandard2.0/AWSSDK.Core.xml",
         "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.Lambda/3.7.305.21": {
+      "sha512": "BtAtTa1wTRtBnOV3AhrCI5V1ZhE+ybsdO2LlDlUuK6HeAA8wie6obRVv8NaegbFILrulMi40ZnR4BvBehwcW/A==",
+      "type": "package",
+      "path": "awssdk.lambda/3.7.305.21",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.Lambda.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.lambda.3.7.305.21.nupkg.sha512",
+        "awssdk.lambda.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.Lambda.dll",
+        "lib/net35/AWSSDK.Lambda.pdb",
+        "lib/net35/AWSSDK.Lambda.xml",
+        "lib/net45/AWSSDK.Lambda.dll",
+        "lib/net45/AWSSDK.Lambda.pdb",
+        "lib/net45/AWSSDK.Lambda.xml",
+        "lib/net8.0/AWSSDK.Lambda.dll",
+        "lib/net8.0/AWSSDK.Lambda.pdb",
+        "lib/net8.0/AWSSDK.Lambda.xml",
+        "lib/netcoreapp3.1/AWSSDK.Lambda.dll",
+        "lib/netcoreapp3.1/AWSSDK.Lambda.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Lambda.xml",
+        "lib/netstandard2.0/AWSSDK.Lambda.dll",
+        "lib/netstandard2.0/AWSSDK.Lambda.pdb",
+        "lib/netstandard2.0/AWSSDK.Lambda.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "AWSSDK.S3/3.7.307.31": {

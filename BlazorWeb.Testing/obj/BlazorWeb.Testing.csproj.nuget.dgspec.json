@@ -139,6 +139,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AWSSDK.CloudFormation": {
+              "target": "Package",
+              "version": "[3.7.307.15, )"
+            },
+            "AWSSDK.Lambda": {
+              "target": "Package",
+              "version": "[3.7.305.21, )"
+            },
             "AWSSDK.S3": {
               "target": "Package",
               "version": "[3.7.307.31, )"

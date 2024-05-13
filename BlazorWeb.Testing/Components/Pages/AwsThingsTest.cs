@@ -12,6 +12,8 @@ public class AwsThingsTest: TestContext
     public void Renders_Tab_UI()
     {
         Services.AddSingleton<IAwsS3Service>(new MockAwsS3Service());
+        Services.AddSingleton<IAwsLambdaService>(new MockLambdaService());
+
         var cut = RenderComponent<AwsThings>();
 
         var tabs = cut.FindAll(".tab");
@@ -34,6 +36,8 @@ public class AwsThingsTest: TestContext
     public void Can_List_Buckets()
     {
         Services.AddSingleton<IAwsS3Service>(new MockAwsS3Service());
+        Services.AddSingleton<IAwsLambdaService>(new MockLambdaService());
+
         var cut = RenderComponent<AwsThings>();
 
         var fetchButton = cut.Find(".btn.btn-info");
@@ -43,5 +47,28 @@ public class AwsThingsTest: TestContext
 
         var li = cut.FindAll("li");
         Assert.Equal(2, li.Count);
+    }
+
+    [Fact]
+    public void Can_List_Functions()
+    {
+        Services.AddSingleton<IAwsS3Service>(new MockAwsS3Service());
+        Services.AddSingleton<IAwsLambdaService>(new MockLambdaService());
+
+        var cut = RenderComponent<AwsThings>();
+
+        var tabs = cut.FindAll(".tab");
+        tabs[1].Click();
+
+        var fetchButton = cut.Find(".btn.btn-info");
+        fetchButton.Click();
+
+        cut.WaitForElement("ul");
+
+        var ul = cut.Find("ul");
+        var li = cut.FindAll("li");
+        Assert.Equal(2, li.Count);
+        Assert.Contains("BlazorWeb-dev-listFunctions", ul.TextContent);
+        Assert.Contains("BlazorWeb-prd-listFunctions", ul.TextContent);
     }
 }

@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "u+eHRR21H+i5oE/3zgb4sV5QCSnBdatn1rNvZD7GTU7BHF6DuA91jSKJRRdlzEHkjVCGFEwoOp9hxriqFFY80A==",
+  "dgSpecHash": "aw3RLw9DbeUE6nTAVBaFRAGK5OBloOJsjuptRLREvCQn7OwdIyE2P3fCktEVkfZe901xadlOsqPwaZpubi9rig==",
   "success": true,
   "projectFilePath": "/Users/kennetla/codebase/net/blazor-things/Web/BlazorWeb.Testing/BlazorWeb.Testing.csproj",
   "expectedPackageFiles": [
     "/Users/kennetla/.nuget/packages/anglesharp/1.1.1/anglesharp.1.1.1.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/anglesharp.css/1.0.0-beta.139/anglesharp.css.1.0.0-beta.139.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/anglesharp.diffing/0.18.2/anglesharp.diffing.0.18.2.nupkg.sha512",
+    "/Users/kennetla/.nuget/packages/awssdk.cloudformation/3.7.307.15/awssdk.cloudformation.3.7.307.15.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/awssdk.core/3.7.303.29/awssdk.core.3.7.303.29.nupkg.sha512",
+    "/Users/kennetla/.nuget/packages/awssdk.lambda/3.7.305.21/awssdk.lambda.3.7.305.21.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/awssdk.s3/3.7.307.31/awssdk.s3.3.7.307.31.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/bunit/1.28.9/bunit.1.28.9.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/bunit.core/1.28.9/bunit.core.1.28.9.nupkg.sha512",
