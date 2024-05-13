@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5lzwfpabbo0VjLU7ij6H/XEKeGQ6m2LSWIiGCtr/e3R+9TZU58XY6cmMYWF41VqhDZAdfZwk0Cs/W3B8ki9uEw==",
+  "dgSpecHash": "r8AXDdChgGZKGnxBNJ7oJPhT68Zj1wk27kJRpRJNiMSz6kgjfh+aW++exJjuqcIU74Wo1rqGCpGQhL/w7tj+tg==",
   "success": true,
   "projectFilePath": "/Users/kennetla/codebase/net/blazor-things/Web/BlazorWeb/BlazorWeb.csproj",
   "expectedPackageFiles": [
+    "/Users/kennetla/.nuget/packages/awssdk.cloudformation/3.7.307.15/awssdk.cloudformation.3.7.307.15.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/awssdk.core/3.7.303.29/awssdk.core.3.7.303.29.nupkg.sha512",
+    "/Users/kennetla/.nuget/packages/awssdk.lambda/3.7.305.21/awssdk.lambda.3.7.305.21.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/awssdk.s3/3.7.307.31/awssdk.s3.3.7.307.31.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/kennetla/.nuget/packages/microsoft.aspnetcore.cryptography.internal/8.0.4/microsoft.aspnetcore.cryptography.internal.8.0.4.nupkg.sha512",

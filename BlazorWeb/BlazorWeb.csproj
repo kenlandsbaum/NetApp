@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.CloudFormation" Version="3.7.307.15" />
+    <PackageReference Include="AWSSDK.Lambda" Version="3.7.305.21" />
     <PackageReference Include="AWSSDK.S3" Version="3.7.307.31" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />

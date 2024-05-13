@@ -7,6 +7,7 @@ using BlazorWeb.Data;
 using BlazorWeb.Services;
 using BlazorWeb.Models;
 using BlazorWeb.AwsClients;
+using Amazon.Lambda;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,8 @@ builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuth
 builder.Services.AddScoped<ITodoService, TodoService>();
 builder.Services.AddScoped<IS3Client, S3Client>();
 builder.Services.AddScoped<IAwsS3Service, AwsS3Service>();
+builder.Services.AddScoped<IAmazonLambda, AmazonLambdaClient>();
+builder.Services.AddScoped<IAwsLambdaService, AwsLambdaService>();
 
 builder.Services.AddSingleton<ILoggerFactory, LoggerFactory>();
 builder.Services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));

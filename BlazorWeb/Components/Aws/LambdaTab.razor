@@ -1,16 +1,35 @@
-@* @using Amazon.Lambda.Model *@
+@using Amazon.Lambda.Model
 
 @namespace BlazorWeb.Components.Aws
+
 
 @rendermode InteractiveServer
 <div>
     <div style="border:1px solid #333;padding:1em;">
         <h3 style="font-weight:300;margin:0.6em 0;">Lambda Functions</h3>
-        <button class="btn btn-info" style="margin:0.6em 0;" >Fetch</button>
+        <button class="btn btn-info" style="margin:0.6em 0;" @onclick="FetchFunctions" >Fetch</button>
     </div>
+    @if (functions is not null)
+    {
+        <ul style="list-style-type:none;padding:0;">
+            @foreach (var function in functions)
+            {
+                <li style="list-style-type:none;padding:0.6em 0;border-bottom:1px solid #ddd;">
+                    <p>@function.FunctionName</p>
+                    <p>@function.LastModified</p>
+                </li>
+            }
+        </ul>
+    }
     <div>
         <h3 style="font-weight:300;margin:0.6em 0;">Create Function</h3>
         <p>Some form to create function... I don't even know...</p>
     </div>
 </div>
-@code {}
+@code {
+    [Parameter]
+    public List<FunctionConfiguration> functions {get; set;} = null!;
+
+    [Parameter]
+    public EventCallback FetchFunctions {get; set;}
+}

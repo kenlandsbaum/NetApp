@@ -1,11 +1,13 @@
 @page "/aws-things"
 @rendermode InteractiveServer
 
+@using Amazon.Lambda.Model
 @using Amazon.S3.Model
 @using BlazorWeb.Services;
 @using BlazorWeb.Components.Aws;
 
 @inject IAwsS3Service AwsS3Service
+@inject IAwsLambdaService AwsLambdaService
 
 <PageTitle>Aws Surfer</PageTitle>
 
@@ -27,7 +29,7 @@
 }
 @if (activeTab == "Lambda")
 {
-    <LambdaTab />
+    <LambdaTab FetchFunctions="FetchFunctions" functions="functions" />
 }
 @if (activeTab == "Cloudformation")
 {
@@ -39,11 +41,24 @@
     private string activeTab = "S3";
     private string error = string.Empty;
     private List<S3Bucket> buckets {get; set;} = null!;
+    private List<FunctionConfiguration> functions {get; set;} = null!;
     private string newBucketName {get; set;} = string.Empty;
     private async Task FetchBuckets()
     {
         try {
             buckets = await AwsS3Service.ListBuckets();
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+        }
+    }
+
+    private async Task FetchFunctions()
+    {
+        try
+        {
+            functions = await AwsLambdaService.ListFunctions();
         }
         catch (Exception ex)
         {
